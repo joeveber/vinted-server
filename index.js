@@ -8,7 +8,7 @@ const app = express();
 app.use(formidable());
 app.use(morgan("tiny"));
 
-mongoose.connect("mongodb://localhost/vinted"); 
+mongoose.connect("mongodb+srv://joeyindaclouds:qvn5AuEmefU@cluster0.rotgl.mongodb.net/test"); 
 
 const signUp = require("./routes/signup");
 app.use(signUp);
