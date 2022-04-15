@@ -26,6 +26,7 @@ app.use(offers);
 app.all("*", (req, res) => {
     console.log("all routes");
     res.status(400).json({message: "Unauthorized"});
+    
  });
 
 
