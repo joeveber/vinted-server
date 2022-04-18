@@ -46,9 +46,8 @@ router.post("/offer/publish", isAuthenticated, async (req,res) => {
               
         });
         
-        
         await newOffer.save();
-      
+
 res.json({
     product_name: req.fields.title,
     product_description: req.fields.description,
@@ -72,12 +71,5 @@ res.json({
 });
 
 ///
-
-
-
-
-
-
-
 
 module.exports = router;

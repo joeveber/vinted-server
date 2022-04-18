@@ -4,9 +4,9 @@ const router = express.Router();
 const cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
-  cloud_name: "dnhmaqdjr",
-  api_key: "445914567143873",
-  api_secret: "B62VWHY9Gq6Lr0FEfY8BQEx79Cc"
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET
 });
 
 
