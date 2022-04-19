@@ -11,11 +11,8 @@ app.use(formidable());
 app.use(morgan("tiny"));
 app.use(cors());
 
-<<<<<<< HEAD
 mongoose.connect(process.env.MONGODB_URI);
-=======
 mongoose.connect("mongodb+srv://joeyindaclouds:qvn5AuEmefU@cluster0.rotgl.mongodb.net/test"); 
->>>>>>> ea33cd3c062cab14bfbbb967235e6db579be9af7
 
 const signUp = require("./routes/signup");
 app.use(signUp);
