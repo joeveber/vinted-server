@@ -11,7 +11,7 @@ app.use(formidable());
 app.use(morgan("tiny"));
 app.use(cors());
 
-mongoose.connect("mongodb+srv://joeyindaclouds:qvn5AuEmefU@cluster0.rotgl.mongodb.net/test"); 
+mongoose.connect(process.env.MONGODB_URI);
 
 const signUp = require("./routes/signup");
 app.use(signUp);
