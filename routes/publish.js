@@ -11,7 +11,7 @@ cloudinary.config({
 
 const Offer = require("../models/Offer.js");
 
-// const isAuthenticated = require("../middlewares/isAuthenticated");
+// const isAuthenticated   = require("../middlewares/isAuthenticated");
 
 router.post("/offer/publish", async (req, res) => {
   console.log("publish route");
