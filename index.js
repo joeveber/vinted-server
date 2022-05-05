@@ -1,10 +1,9 @@
-require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
 const formidable = require("express-formidable");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const cors = require("cors");
-
 
 const app = express();
 app.use(formidable());
@@ -25,14 +24,13 @@ app.use(publish);
 const offers = require("./routes/offers");
 app.use(offers);
 
-
 app.all("*", (req, res) => {
-    console.log("all routes");
-    res.status(400).json({message: "Unauthorized"});
-    
- });
+  console.log("all routes");
+  res.status(400).json({ message: "Page doesn't exist" });
+});
 
-
-app.listen(process.env.PORT, () => {console.log("Server started")});
+app.listen(process.env.PORT, () => {
+  console.log("Server started");
+});
 
 /// Test commit
