@@ -13,13 +13,12 @@ const Offer = require("../models/Offer.js");
 
 // const isAuthenticated = require("../middlewares/isAuthenticated");
 
-///
 router.post("/offer/publish", async (req, res) => {
   console.log("publish route");
 
   try {
     const upload = await cloudinary.uploader.upload(req.files.picture.path, {
-      folder: "winter/offers",
+      folder: "offers",
       public_id: `${req.fields.title}`,
     });
 
@@ -63,7 +62,5 @@ router.post("/offer/publish", async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
-
-/// Testtttt
 
 module.exports = router;
