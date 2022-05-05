@@ -1,1 +1,1 @@
-# vinted-server
+# my-repository
