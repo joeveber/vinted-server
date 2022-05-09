@@ -11,7 +11,7 @@ cloudinary.config({
 
 const Offer = require("../models/Offer.js");
 
-// REMOVING AUTH FOR NOW => Add also "isAuthenticated" in the routes
+// REMOVING AUTH FOR NOW => Add also "" in the routes
 // const isAuthenticated = require("../middlewares/isAuthenticated");
 
 ///
@@ -108,6 +108,7 @@ router.get("/offers", async (req, res) => {
   }
 });
 
+/// Route offer
 router.get("/offer/:id", async (req, res) => {
   console.log("OFFER route");
   console.log(req.params);

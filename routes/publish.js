@@ -11,9 +11,9 @@ cloudinary.config({
 
 const Offer = require("../models/Offer.js");
 
-// const isAuthenticated = require("../middlewares/isAuthenticated");
+const isAuthenticated = require("../middlewares/isAuthenticated");
 
-router.post("/offer/publish", async (req, res) => {
+router.post("/offer/publish", isAuthenticated, async (req, res) => {
   console.log("publish route");
 
   try {
@@ -39,7 +39,7 @@ router.post("/offer/publish", async (req, res) => {
       },
       owner: req.user._id,
     });
-
+    console.log("check");
     await newOffer.save();
 
     res.json({
