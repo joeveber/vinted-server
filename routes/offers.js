@@ -16,45 +16,8 @@ const Offer = require("../models/Offer.js");
 
 ///
 router.get("/offers", async (req, res) => {
-  // Corretion - Gestion de la pagination
-
-  // ---------------------------------------------------------------------
-  // if (req.query.page) {
-  //     const pageLimit = 2;
-  //     const offers = await Offer.find().limit(pageLimit).skip((Number(req.query.page) - 1) * pageLimit);
-  //     res.json(offers);
-  // } else if (req.query.title && req.query.priceMax && req.query.priceMin) {
-  //     const offers = await Offer.find({
-  //         product_name: new RegExp(req.query.title,"i"),
-  //         product_price: {$lte: req.query.priceMax, $gte: req.query.priceMin}
-  //     });
-  //     res.json(offers);
-  // } else if (req.query.priceMax && req.query.priceMin) {
-  //     const offers = await Offer.find({
-  //         product_price: {$lte: req.query.priceMax, $gte: req.query.priceMin}
-  //     });
-  //     res.json(offers);
-  // } else if (String(req.query.sort) === "price-desc") {
-  //     const offers = await Offer.find().sort({product_price: -1});
-  //     res.json(offers);
-  // } else if (String(req.query.sort) === "price-asc" && req.query.title) {
-  //     const offers = await Offer
-  //         .find({product_name: new RegExp(req.query.title,"i")})
-  //         .sort({product_price: 1});
-  //     res.json(offers);
-  // } else if (String(req.query.sort) === "price-asc") {
-  //     const offers = await Offer.find().sort({product_price: 1});
-  //     res.json(offers);
-  // } else {
-  //     const offers = await Offer.find({
-  //         product_name: new RegExp(req.query.title,"i"),
-  //     });
-  //     res.json(offers);
-  // };
-  //-------------------------------------------------------------------------
-
   console.log("offers route");
-  const filteredObject = {}; // Correction
+  const filteredObject = {};
 
   // Correction - gestion du find
   try {
