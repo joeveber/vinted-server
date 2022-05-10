@@ -24,6 +24,9 @@ app.use(publish);
 const offers = require("./routes/offers");
 app.use(offers);
 
+const payment = require("./routes/payment");
+app.use(payment);
+
 app.all("*", (req, res) => {
   console.log("all routes");
   res.status(400).json({ message: "Page doesn't exist" });
