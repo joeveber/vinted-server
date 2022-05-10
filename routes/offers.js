@@ -59,7 +59,9 @@ router.get("/offers", async (req, res) => {
       .sort(sortObject)
       .skip((req.query.page - 1) * req.query.limit)
       .limit(req.query.limit)
-      .select("product_name product_price");
+      .select(
+        "product_details product_pictures _id product_name product_description product_price owner"
+      );
 
     const count = await Offer.countDocuments(filteredObject);
 
