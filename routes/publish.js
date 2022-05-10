@@ -13,7 +13,7 @@ const Offer = require("../models/Offer.js");
 
 const isAuthenticated = require("../middlewares/isAuthenticated");
 
-router.post("/offer/publish", async (req, res) => {
+router.post("/offer/publish", isAuthenticated, async (req, res) => {
   console.log("publish route");
   const { title, description, price, brand, size, condition, color, city } =
     req.fields;
