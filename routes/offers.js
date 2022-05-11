@@ -11,15 +11,11 @@ cloudinary.config({
 
 const Offer = require("../models/Offer.js");
 
-// REMOVING AUTH FOR NOW => Add also "" in the routes
-// const isAuthenticated = require("../middlewares/isAuthenticated");
-
-///
+/// route offers
 router.get("/offers", async (req, res) => {
   console.log("offers route");
   const filteredObject = {};
 
-  // Correction - gestion du find
   try {
     if (req.query.title) {
       filteredObject.product_name = new RegExp(req.query.title, "i");
@@ -45,16 +41,6 @@ router.get("/offers", async (req, res) => {
       sortObject.product_price = "asc";
     }
 
-    // let limit = 2;
-    // if(req.query.limit) {
-    //     limit = req.query.limit;
-    // }
-
-    // let page = 1;
-    // if(req.query.page) {
-    //     page = req.query.page;
-    // }
-
     const offers = await Offer.find(filteredObject)
       .sort(sortObject)
       .skip((req.query.page - 1) * req.query.limit)
@@ -66,8 +52,6 @@ router.get("/offers", async (req, res) => {
     const count = await Offer.countDocuments(filteredObject);
 
     res.json({ count: count, offers: offers });
-
-    /// correction
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
